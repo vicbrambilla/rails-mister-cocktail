@@ -13,8 +13,6 @@ class CocktailsController < ApplicationController
   end
 
   def edit
-    @cocktail = Cocktail.edit
-    @cocktail.save
   end
 
   def create
@@ -24,6 +22,7 @@ class CocktailsController < ApplicationController
   end
 
   def update
+    @cocktail.update(cocktail_params)
   end
 
   def destroy
