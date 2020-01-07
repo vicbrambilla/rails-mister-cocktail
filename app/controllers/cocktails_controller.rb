@@ -13,6 +13,7 @@ class CocktailsController < ApplicationController
   end
 
   def edit
+    @cocktail = Cocktail.find(params[:id])
   end
 
   def create
@@ -22,10 +23,13 @@ class CocktailsController < ApplicationController
   end
 
   def update
-    @cocktail.update(cocktail_params)
+    # @cocktail.update(cocktail_params)
+    @cocktail = Cocktail.find(params[:id])
   end
 
   def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
   end
 
   private
